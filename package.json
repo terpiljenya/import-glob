@@ -1,0 +1,27 @@
+{
+  "name": "import-glob",
+  "version": "1.0.0",
+  "description": "ES6 import with glob patterns (preloader for Webpack)",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Terpil Jenya",
+    "url": "https://github.com/terpiljenya"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "glob",
+    "es6"
+  ],
+  "dependencies": {
+    "glob": "^5.0.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terpiljenya/import-glob"
+  }
+}
