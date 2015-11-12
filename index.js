@@ -17,8 +17,11 @@ module.exports = function(source) {
       return 'import * as ' + moduleName + ' from ' + quote + file + quote;
     })
     .join(';\n');
-    result += '\nlet reducers = Object.assign(' + modules.join(', ') + ')';
+    if (result) {
+      result += '\nlet ' + obj + ' = Object.assign(' + modules.join(', ') + ')';
+    }
     return result;
   }
-  return source.replace(regex, replacer);
+  var res = source.replace(regex, replacer);
+  return res;
 };
