@@ -11,7 +11,7 @@ import * as module0 from "foo/1.js";
 import * as module1 from "foo/bar/2.js";
 import * as module2 from "foo/bar/3.js";
 
-modules = Object.assign(module0, module1, module2)
+modules = [module0, module1, module2]
 ```
 
 ## Install
@@ -20,7 +20,7 @@ npm install import-glob --save-dev
 ```
 
 ## Usage
-You can use it one of two ways, the recommended way is to use it as a preloader for files you know has import statements.
+You can use it one of two ways, the recommended way is to use it as a preloader
 
 ```js
 {

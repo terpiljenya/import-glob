@@ -1,5 +1,6 @@
 var glob = require("glob");
 var path = require("path");
+var merge = require('deepmerge')
 
 module.exports = function(source) {
   this.cacheable();
@@ -18,7 +19,7 @@ module.exports = function(source) {
     })
     .join(';\n');
     if (result) {
-      result += '\nlet ' + obj + ' = Object.assign(' + modules.join(', ') + ')';
+      result += '\nlet ' + obj + ' = [' + modules.join(', ') + ']';
     }
     return result;
   }
