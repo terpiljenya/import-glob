@@ -1,6 +1,5 @@
 var glob = require("glob");
 var path = require("path");
-var merge = require('deepmerge')
 
 module.exports = function(source) {
   this.cacheable();
