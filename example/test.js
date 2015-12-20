@@ -1,3 +1,7 @@
-import modules from './foo/**/*.js';
+import allModules from './foo/**/*.js';
+import testModules from './foo/**/test.js';
 
-console.log(modules);
+import './**/*.scss';
+
+console.log(allModules);
+console.log(testModules);
