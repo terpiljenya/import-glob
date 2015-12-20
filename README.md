@@ -3,7 +3,7 @@ ES6 import with glob patterns (preloader for Webpack)
 
 Expands globbing patterns for ES6 `import` statements.
 ```js
-import modules from "foo/**/*";
+import modules from "foo/**/*.js";
 ```
 Expands into
 ```js

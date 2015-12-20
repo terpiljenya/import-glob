@@ -1,0 +1,3 @@
+node_modules
+.eslintrc
+example/output.js
