@@ -2,17 +2,31 @@
 ES6 import with glob patterns (preloader for Webpack)
 
 Expands globbing patterns for ES6 `import` statements.
+
+---
 ```js
-import modules from "foo/**/*.js";
+import modules from "./foo/**/*.js";
 ```
 Expands into
 ```js
-import * as module0 from "foo/1.js";
-import * as module1 from "foo/bar/2.js";
-import * as module2 from "foo/bar/3.js";
+import * as module0 from "./foo/1.js";
+import * as module1 from "./foo/bar/2.js";
+import * as module2 from "./foo/bar/3.js";
 
 modules = [module0, module1, module2]
 ```
+---
+__For side effects:__
+
+```js
+import "./foo/**/*.scss";
+```
+Expands into
+```js
+import "./foo/1.scss";
+import "./foo/bar/2.scss";
+```
+---
 
 ## Install
 ```sh
