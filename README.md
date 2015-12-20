@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/terpiljenya/import-glob.svg)](https://travis-ci.org/terpiljenya/import-glob)
+[![npm version](https://badge.fury.io/js/import-glob.svg)](https://badge.fury.io/js/import-glob)
 # import-glob
 ES6 import with glob patterns (preloader for Webpack)
 
