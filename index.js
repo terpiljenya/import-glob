@@ -26,9 +26,9 @@ module.exports = function(source) {
           return 'import ' + fileName;
         }
       })
-      .join(';\n');
+      .join('; ');
     if (result && withModules) {
-      result += '\nlet ' + obj + ' = [' + modules.join(', ') + ']';
+      result += '; let ' + obj + ' = [' + modules.join(', ') + ']';
     }
     return result;
   }
