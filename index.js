@@ -18,7 +18,7 @@ module.exports = function(source) {
       })
       .map(function(file, index) {
         var fileName = quote + file + quote;
-        if (match.match(importModules)) {
+        if (match.match(importSass)) {
           return '@import ' + fileName;
         } else if (match.match(importModules)) {
           var moduleName = obj + index;
