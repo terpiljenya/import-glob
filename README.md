@@ -29,6 +29,18 @@ import "./foo/1.scss";
 import "./foo/bar/2.scss";
 ```
 ---
+__For sass:__
+
+```scss
+@import "./foo/**/*.scss";
+```
+Expands into
+```scss
+@import "./foo/1.scss";
+@import "./foo/bar/2.scss";
+```
+
+---
 
 ## Install
 ```sh
@@ -44,7 +56,12 @@ You can use it one of two ways, the recommended way is to use it as a preloader
     preloaders: [{
       test: /\.js/,
       loader: 'import-glob'
-    }]
+    },
+    {
+      test: /\.scss/,
+      loader: 'import-glob'
+    }
+    ]
   }
 }
 ```
