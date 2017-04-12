@@ -3,7 +3,7 @@ var path = require("path");
 
 module.exports = function(source) {
   this.cacheable();
-  var regex = /.?import + ?((\w+) from )?([\'\"])(.*?)\3/gm;
+  var regex = /.?import + ?((\w+) +from )?([\'\"])(.*?)\3/gm;
   var importModules = /import +(\w+) +from +([\'\"])(.*?)\2/gm;
   var importFiles = /import +([\'\"])(.*?)\1/gm;
   var importSass = /@import +([\'\"])(.*?)\1/gm;
