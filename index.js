@@ -3,6 +3,7 @@ var path = require("path");
 
 module.exports = function(source) {
   this.cacheable();
+  var self = this;
   var regex = /.?import + ?((\w+) +from )?([\'\"])(.*?)\3/gm;
   var importModules = /import +(\w+) +from +([\'\"])(.*?)\2/gm;
   var importFiles = /import +([\'\"])(.*?)\1/gm;
@@ -18,6 +19,7 @@ module.exports = function(source) {
       })
       .map(function(file, index) {
         var fileName = quote + file + quote;
+        self.addDependency(fileName);
         if (match.match(importSass)) {
           return '@import ' + fileName;
         } else if (match.match(importModules)) {
