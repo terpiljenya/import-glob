@@ -33,6 +33,10 @@ module.exports = function(source) {
     if (result && withModules) {
       result += '; let ' + obj + ' = [' + modules.join(', ') + ']';
     }
+
+    if(!result) {
+      result = 'const ' + obj + ' = []';
+    }
     return result;
   }
   var res = source.replace(regex, replacer);
