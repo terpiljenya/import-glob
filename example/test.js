@@ -5,3 +5,6 @@ import './foo/**/*.scss';
 
 console.log(allModules);
 console.log(testModules);
+
+console.log(allModulesByPath);
+console.log(testModulesByPath);

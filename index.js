@@ -10,6 +10,7 @@ module.exports = function(source) {
   var resourceDir = path.dirname(this.resourcePath);
   function replacer(match, fromStatement, obj, quote, filename) {
     var modules = [];
+    var modulesDict = {};
     var withModules = false;
     if (!glob.hasMagic(filename)) return match;
     var result = glob
@@ -22,6 +23,7 @@ module.exports = function(source) {
           return '@import ' + fileName;
         } else if (match.match(importModules)) {
           var moduleName = obj + index;
+          modulesDict[fileName] = moduleName;
           modules.push(moduleName);
           withModules = true;
           return 'import * as ' + moduleName + ' from ' + fileName;
@@ -31,6 +33,10 @@ module.exports = function(source) {
       })
       .join('; ');
     if (result && withModules) {
+      var modulesDictEntries = Object.entries(modulesDict)
+          .map(function(entry) { return entry[0] + ":" + entry[1]; })
+          .join(",");
+      result += "; let " + obj + "ByPath = {" + modulesDictEntries + '}';
       result += '; let ' + obj + ' = [' + modules.join(', ') + ']';
     }
     return result;
