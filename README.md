@@ -15,7 +15,7 @@ import * as module0 from "./foo/1.js";
 import * as module1 from "./foo/bar/2.js";
 import * as module2 from "./foo/bar/3.js";
 
-modules = [module0, module1, module2]
+let modules = [module0, module1, module2]
 ```
 ---
 __For side effects:__
