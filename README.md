@@ -53,15 +53,19 @@ You can use it one of two ways, the recommended way is to use it as a preloader
 ```js
 {
   module: {
-    preloaders: [{
+    loaders: [{
       test: /\.js/,
-      loader: 'import-glob'
+      enforce: "pre",
+      loader: 'import-glob',
+      // Use excludeExt to remove the file extension from
+      // the generated import string. (Optional.)
+      options: { excludeExt: false }
     },
     {
       test: /\.scss/,
-      loader: 'import-glob'
-    }
-    ]
+      loader: 'import-glob',
+      enforce: "pre"
+    }]
   }
 }
 ```
