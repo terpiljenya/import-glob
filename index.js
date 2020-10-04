@@ -9,7 +9,7 @@ module.exports = function(source) {
   var importSass = /@import +([\'\"])(.*?)\1/gm;
   var resourceDir = path.dirname(this.resourcePath);
   function replacer(match, fromStatement, obj, quote, filename) {
-    var modules = [];
+    var modules = {};
     var withModules = false;
     if (!glob.hasMagic(filename)) return match;
     var result = glob
@@ -22,7 +22,7 @@ module.exports = function(source) {
           return '@import ' + fileName;
         } else if (match.match(importModules)) {
           var moduleName = obj + index;
-          modules.push(moduleName);
+          modules[file] = moduleName;
           withModules = true;
           return 'import * as ' + moduleName + ' from ' + fileName;
         } else if (match.match(importFiles)) {
@@ -31,7 +31,8 @@ module.exports = function(source) {
       })
       .join('; ');
     if (result && withModules) {
-      result += '; let ' + obj + ' = [' + modules.join(', ') + ']';
+      let moduleStr = Object.entries(modules).map(([k,v]) => `"${k}": ${v}`).join(', ');
+      result += '; let ' + obj + ' = ' + `{ ${moduleStr} }`;
     }
     return result;
   }

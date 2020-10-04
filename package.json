@@ -1,12 +1,12 @@
 {
-  "name": "import-glob",
-  "version": "1.5.0",
-  "description": "ES6 import with glob patterns (preloader for Webpack)",
+  "name": "import-glob-keyed",
+  "version": "0.0.1",
+  "description": "ES6 import (keyed) with glob patterns (preloader for Webpack)",
   "license": "MIT",
   "main": "index.js",
   "author": {
-    "name": "Terpil Jenya",
-    "url": "https://github.com/terpiljenya"
+    "name": "Liam Bigelow",
+    "url": "https://github.com/bglw"
   },
   "keywords": [
     "webpack",
@@ -28,6 +28,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/terpiljenya/import-glob"
+    "url": "git+https://github.com/bglw/import-glob-keyed"
   }
 }
